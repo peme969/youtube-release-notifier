@@ -1,0 +1,25 @@
+name: Daily Yarnhub Release Updates Check!
+
+on:
+  schedule:
+    - cron: '0 18 * * *' # 1PM every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: execute py script 
+        run: python main.py
