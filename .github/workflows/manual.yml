@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Run YarnHub Release Checker
-        run: python main.py
+        run: python manual.py
         env:
           days: ${{ inputs.days }}
     
