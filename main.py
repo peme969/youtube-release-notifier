@@ -20,7 +20,7 @@ def convert(time):
   input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
   cst_offset = timedelta(hours=-6)
   cst_datetime = input_datetime.replace(tzinfo=timezone.utc) + cst_offset
-  print("CST Date and Time:", cst_datetime.strftime("%Y-%m-%d %H:%M:%S"))
+  return cst_datetime.strftime("%Y-%m-%d %H:%M:%S")
 with requests.get('https://yarnharb-detect.vercel.app/check') as app:
   aps = app.json()
   if aps['text'] == "No video uploaded":
