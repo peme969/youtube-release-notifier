@@ -8,6 +8,10 @@ on:
         description: 'Enter an amount of days from now to search!'
         required: true
         type: number
+      channel_id:
+        description: 'Enter the channel id you want to check for... (optional)'
+        required: false
+        type: string
 
 jobs:
   Manual:
@@ -19,4 +23,8 @@ jobs:
         run: python manual.py
         env:
           days: ${{ inputs.days }}
+          email_password: ${{ secrets.email_password }}
+          email: ${{ secrets.email }}
+          channel_id: ${{ inputs.channel_id }}
+          
     
