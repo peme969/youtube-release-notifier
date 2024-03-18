@@ -1,4 +1,4 @@
-name: Daily Yarnhub Release Updates Check!
+name: Daily Release Detector
 
 on:
   schedule:
