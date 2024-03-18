@@ -11,8 +11,8 @@ def convert(time):
   return cst_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
 days = os.environ['days']
-channel_id = os.eviron['channel_id']
-api_key = os.eviron['api_key'] # get an api key on the google cloud youtube data v3 api service
+channel_id = os.environ['channel_id']
+api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service
 with requests.get('https://channel-update-api.vercel.app/check?days={days}') as app:
   aps = app.json()
   if aps['text'] == "No video uploaded":
@@ -25,5 +25,5 @@ with requests.get('https://channel-update-api.vercel.app/check?days={days}') as 
       print("Please provide a channel id and api key or valid channel ids and api keys :D")
       exit(-1)      
   else:
-    print(f"Oh no! the api has encountered an error! Status code: \n{app.status_code} Error: \n{app.text}")
+    print(app.text)
     exit(-1)
