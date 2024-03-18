@@ -11,7 +11,9 @@ def convert(time):
   return cst_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
 days = os.environ['days']
-with requests.get(f'https://yarnharb-detect.vercel.app/check?days={days}') as app:
+channel_id = os.eviron['channel_id']
+api_key = os.eviron['api_key'] # get an api key on the google cloud youtube data v3 api service
+with requests.get('https://channel-update-api.vercel.app/check?days={days}') as app:
   aps = app.json()
   if aps['text'] == "No video uploaded":
     print("No video uploaded D:")
