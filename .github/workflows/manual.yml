@@ -19,6 +19,7 @@ jobs:
     steps:
       - name: Set channel ID
         id: set_channel_id
+        if: ${{ inputs.channel_id == null }}
         run: echo "::set-output name=default_channel_id::${{ secrets.channel_id }}"
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,7 +30,8 @@ jobs:
           email_password: ${{ secrets.email_password }}
           email: ${{ secrets.email }}
           api_key: ${{ secrets.api_key }}
-          channel_id: ${{ coalesce(inputs.channel_id, steps.set_channel_id.outputs.default_channel_id) }}
+          channel_id: ${{ if(needs.set_channel_id.outputs.default_channel_id, needs.set_channel_id.outputs.default_channel_id, inputs.channel_id) }}
+
 
 
           
