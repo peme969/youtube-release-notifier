@@ -25,6 +25,7 @@ jobs:
           days: ${{ inputs.days }}
           email_password: ${{ secrets.email_password }}
           email: ${{ secrets.email }}
+          api_key: ${{ secrets.api_key }}
           channel_id: ${{ inputs.channel_id }}
           
     
