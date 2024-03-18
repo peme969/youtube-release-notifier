@@ -21,5 +21,9 @@ with requests.get('https://channel-update-api.vercel.app/check?days={days}') as 
     cst_time = convert(aps['published'])
     title = capitalizy(aps['channel_title'])
     print(f"\033[92mYay! {title} released {aps['title']} on {cst_time}\nWatch it here: {aps['url']}\033[0m")
+  elif app.status_code == 400:
+      print("Please provide a channel id and api key or valid channel ids and api keys :D")
+      exit(-1)      
   else:
     print(f"Oh no! the api has encountered an error! Status code: \n{app.status_code} Error: \n{app.text}")
+    exit(-1)
