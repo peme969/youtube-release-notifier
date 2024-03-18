@@ -23,9 +23,6 @@
   <img src="https://img.shields.io/github/contributors/peme969/youtube-release-notifier?style=flat">
 </p>
 <p align="center">
-  <a href="https://github.com/peme969/youtube-release-notifier/actions/workflows/codeql.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/codeql.yml/badge.svg"></a>
-</p>
-<p align="center">
   <a href="https://github.com/peme969/youtube-release-notifier/actions/workflows/daily.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/main.yml/badge.svg"></a>
   <a href="https://github.com/peme969/youtube-release-notifier/actions/workflows/manual.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/manual.yml/badge.svg"></a> (*)
 </p>
