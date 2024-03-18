@@ -26,3 +26,4 @@ jobs:
         env:
             email: ${{ secrets.email }}
             api_key: ${{ secrets.api_key }}
+            channel_id: ${{ secrets.channel_id }}
