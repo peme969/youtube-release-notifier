@@ -1,19 +1,11 @@
 <picture><img align="center" src="https://raw.githubusercontent.com/peme969/yt-channel-updates/main/updater.webp" width="20%"/></picture>
 
-# DuoXPy - Project Sandy
+# YouTube Video Release Notifier
 
-### ⚡️ XP farm and Streak keeper for Duolingo
+### ⚡️ Latest video release notifier for YouTube
 
 #### Powered by GitHub Actions 🐙 and Python 🐍
 
-
-
-
-<p align="center">
-  <a href="https://github.com/gorouflex/DuoXPy/">English 🇺🇸</a>
-  •
-  <a href="README-vn.md">Tiếng Việt 🇻🇳</a>
-</p>
 <p align="center">
   <a href="#feature">Feature</a>
   •
@@ -23,7 +15,6 @@
   •
   <a href="#preview">Preview</a>
   •
-  <a href="#disclaimer">Disclaimer</a>
 </p>
 <p align="center">
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/gorouflex/DuoXPy?style=flat">
