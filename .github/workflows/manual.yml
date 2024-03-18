@@ -9,7 +9,6 @@ on:
         required: true
         type: number
       channel_id:
-        default: '${{ secrets.channel_id }}'
         description: 'Enter the channel ID you want to check for. (Optional)'
         required: false
         type: string
@@ -18,6 +17,9 @@ jobs:
   Manual:
     runs-on: ubuntu-latest
     steps:
+      - name: Set channel ID
+        id: set_channel_id
+        run: echo "::set-output name=default_channel_id::${{ secrets.channel_id }}"
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Run YarnHub Release Checker
@@ -27,7 +29,7 @@ jobs:
           email_password: ${{ secrets.email_password }}
           email: ${{ secrets.email }}
           api_key: ${{ secrets.api_key }}
-          channel_id: ${{ inputs.channel_id }}
+          channel_id: ${{ coalesce(inputs.channel_id, steps.set_channel_id.outputs.default_channel_id) }}
 
 
           
