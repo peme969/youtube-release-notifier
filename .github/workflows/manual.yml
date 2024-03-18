@@ -1,15 +1,16 @@
-name: Manual YarnHub Release Checker
+name: Manual Release Checker
 
 on:
   workflow_dispatch:
     inputs:
       days:
         default: 1
-        description: 'Enter an amount of days from now to search!'
+        description: 'Enter an amount of days from now to search.'
         required: true
         type: number
       channel_id:
-        description: 'Enter the channel id you want to check for... (optional)'
+        default: ${{ secrets.channel_id }}
+        description: 'Enter the channel ID you want to check for. (Optional)'
         required: false
         type: string
 
@@ -27,5 +28,6 @@ jobs:
           email: ${{ secrets.email }}
           api_key: ${{ secrets.api_key }}
           channel_id: ${{ inputs.channel_id }}
+
           
     
