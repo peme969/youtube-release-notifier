@@ -17,7 +17,7 @@
   •
 </p>
 <p align="center">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues/gorouflex/DuoXPy?style=flat">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/peme969/yt-channel-?style=flat">
   <img src="https://img.shields.io/github/forks/gorouflex/DuoXPy?style=flat">
 <p align="center">
   <img src="https://img.shields.io/github/stars/gorouflex/DuoXPy?style=flat">
