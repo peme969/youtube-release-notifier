@@ -1,4 +1,4 @@
-<picture><img align="left" src="https://raw.githubusercontent.com/peme969/yt-channel-updates/main/updater.webp" width="20%"/></picture>
+<picture><img align="center" src="https://raw.githubusercontent.com/peme969/yt-channel-updates/main/updater.webp" width="20%"/></picture>
 
 # DuoXPy - Project Sandy
 
