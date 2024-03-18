@@ -20,6 +20,7 @@ def capitalizy(input_string):
 def convert(time):
   from datetime import datetime, timezone, timedelta
   input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
+  ## this is in cst timezone so change the hours to the timezone difference you have from the UTC timezone (search it up)
   cst_offset = timedelta(hours=-6)
   cst_datetime = input_datetime.replace(tzinfo=timezone.utc) + cst_offset
   return cst_datetime.strftime("%Y-%m-%d %H:%M:%S")
