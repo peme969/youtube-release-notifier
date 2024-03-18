@@ -1,4 +1,4 @@
-<picture><img align="center" src="https://raw.githubusercontent.com/peme969/yt-channel-updates/main/updater.webp" width="20%"/></picture>
+<picture><img align="center" src="https://raw.githubusercontent.com/peme969/youtube-release-notifier/main/updater.webp" width="20%"/></picture>
 
 # YouTube Video Release Notifier
 
@@ -17,40 +17,33 @@
   •
 </p>
 <p align="center">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues/peme969/yt-channel-?style=flat">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/peme969/youtube-release-notifier?style=flat">
   <img src="https://img.shields.io/github/forks/gorouflex/DuoXPy?style=flat">
 <p align="center">
   <img src="https://img.shields.io/github/stars/gorouflex/DuoXPy?style=flat">
-  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/gorouflex/DuoXPy?style=flat">
+  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/peme969/youtube-release-notifier?style=flat">
   <img src="https://img.shields.io/github/contributors/gorouflex/DuoXPy?style=flat">
 </p>
 <p align="center">
-  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/codeql.yml"><img src="https://github.com/gorouflex/DuoXPy/actions/workflows/codeql.yml/badge.svg"></a>
-  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/cl.yml"><img src="https://github.com/gorouflex/DuoXPy/actions/workflows/cl.yml/badge.svg"></a>
+  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/codeql.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/codeql.yml/badge.svg"></a>
+  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/cl.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/cl.yml/badge.svg"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/daily.yml"><img src="https://github.com/gorouflex/DuoXPy/actions/workflows/daily.yml/badge.svg"></a>
-  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/manual.yml"><img src="https://github.com/gorouflex/DuoXPy/actions/workflows/manual.yml/badge.svg"></a> (*)
+  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/daily.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/daily.yml/badge.svg"></a>
+  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/manual.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/manual.yml/badge.svg"></a> (*)
 </p>
 
 #
 
-### ⚠️ This repository is still in its early stages and may not work as expected for some accounts, please try completing at least 9 lessons and run it again after 2-3 days ⚠️, <a href="#how-to-fix-error-500---no-skillid-found-in-xpgains">fix here</a>     
-
-### Belongs to the Sandy Project
-
-- [Sandy](https://github.com/gorouflex/Sandy/) ( Official Documents and Information Repository for Project Sandy )
-- [HoneygainPot](https://github.com/gorouflex/HoneygainPot/) ( 🐝 Automatically claim your Honeygain lucky pot every day 🍯 )
-- [DuoXPy](https://github.com/gorouflex/DuoXPy/) ( ⚡️ XP farm and Streak keeper for Duolingo 🔥 )
-  
+### ⚠️ This repository is still in its early stages and may not work as expected... ⚠️
 > [!IMPORTANT]
 > **Read all** documents in this repo before doing anything!
 > 
 > Don't forget to star ⭐ this repository
 > - Always update your repo following the original repo to get the latest update + bug fixes; I will not support anything if your repo is outdated
-> - **Do not** enter your information ( token ) into 2 workflows file ( `daily.yml` and `manual.yml` ) because it will not work and may leak your information to everyone
+> - **Do not** enter your information ( token ) into 2 workflows file ( `main.yml` and `manual.yml` ) because it will not work and may leak your information to everyone
 > - (*): Do not fork this repo if one of these or all of these ( not CodeQL and CL ) GitHub Actions status badge show failing, and wait until one of these or two of these show passing then you can fork again
-> - `Daily lessons` workflows always run every 14:00 UTC + 0; if you want to change it, refer to [this](https://github.com/gorouflex/DuoXPy/blob/main/README.md#how-to-change-the-schedule-that-the-workflows-will-run)
+> - `Daily Release Detector` workflows always run every 14:00 UTC + 0; if you want to change it, refer to [this](https://github.com/gorouflex/DuoXPy/blob/main/README.md#how-to-change-the-schedule-that-the-workflows-will-run)
 > <img src="https://i.imgur.com/htGeFlY.jpg">
   
 # Feature 
