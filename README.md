@@ -55,7 +55,7 @@
   6. Go to your forked repository 🍴
   7. Go to `Settings > Secrets and Variables > Actions`, and click `New Repository secret`
   8. Use `channel_id` as the name and paste the channel id from Steps 4
-  9. Add the email (name: email), email app password (name: email_password), channel id, days (only for manual detection) and youtube data v3 api key (name: api_key)
+  9. Add the email (name: email), email app password (name: email_password), channel id, and youtube data v3 api key (name: api_key)
   10. Go to your forked repository 🍴 and go to the Actions tab and press `I understand my workflows, go ahead and enable them`
 
 > [!IMPORTANT]
