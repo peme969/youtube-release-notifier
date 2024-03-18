@@ -1,4 +1,4 @@
-<picture><img align="left" src="updater.png" width="20%"/></picture>
+<picture><img align="left" src="https://raw.githubusercontent.com/peme969/yt-channel-updates/main/updater.webp" width="20%"/></picture>
 <h1>DuoXPy - Project Sandy</h1>
 <h3>⚡️ XP farm and Streak keeper for Duolingo</h3>
 <h4>Powered by GitHub Actions 🐙 and Python 🐍</h5>
