@@ -23,3 +23,6 @@ jobs:
 
       - name: execute py script 
         run: python main.py
+        env:
+            email: ${{ secrets.email }}
+            api_key: ${{ secrets.api_key }}
