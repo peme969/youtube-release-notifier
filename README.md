@@ -29,7 +29,7 @@
   <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/cl.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/cl.yml/badge.svg"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/daily.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/daily.yml/badge.svg"></a>
+  <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/daily.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/main.yml/badge.svg"></a>
   <a href="https://github.com/gorouflex/DuoXPy/actions/workflows/manual.yml"><img src="https://github.com/peme969/youtube-release-notifier/actions/workflows/manual.yml/badge.svg"></a> (*)
 </p>
 
