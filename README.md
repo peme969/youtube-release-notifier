@@ -11,8 +11,6 @@
   •
   <a href="#usage">Usage</a>     
   •
-  <a href="#config">Config</a>     
-  •
   <a href="#preview">Preview</a>
   •
 </p>
@@ -41,38 +39,32 @@
 > Don't forget to star ⭐ this repository
 > - Always update your repo following the original repo to get the latest update + bug fixes; I will not support anything if your repo is outdated
 > - **Do not** enter your information ( token ) into 2 workflows file ( `main.yml` and `manual.yml` ) because it will not work and may leak your information to everyone
-> - (*): Do not fork this repo if one of these or all of these ( not CodeQL and CL ) GitHub Actions status badge show failing, and wait until one of these or two of these show passing then you can fork again
+> - (*): Do not fork this repo if one of these or all of these ( not CodeQL ) GitHub Actions status badge show failing, and wait until one of these or two of these show passing then you can fork again
 > - `Daily Release Detector` workflows always run every 14:00 UTC + 0; if you want to change it, refer to [this](https://github.com/gorouflex/DuoXPy/blob/main/README.md#how-to-change-the-schedule-that-the-workflows-will-run)
 > <img src="https://i.imgur.com/htGeFlY.jpg">
   
 # Feature 
 
-- XP farm ⚡️
-- Streak keeper 🔥
+- Sends to Mail with video url and publish date 🔥
+- Accurately detects the latest video released every day ⚡
 
 # Usage 
 
-  1. Go to [Duolingo](https://www.duolingo.com) and log in to your Duolingo account
-  2. Open the browser's console by pressing `F12` button ( or `Fn+F12` on some laptops )
-  3. Click on the tab `Console` then paste this to the console
-
-```
-document.cookie
-  .split(';')
-  .find(cookie => cookie.includes('jwt_token'))
-  .split('=')[1]
-```
-  4. Copy the token without `'` ( example: 'abcde1234` -> abcde1234 )
-  5. [Fork this repository 🍴](https://github.com/gorouflex/DuoXPy/fork)
+  1. Copy the youtube channel username (eg. https://youtube.com/channel/@Yarnhub -> Yarnhub)
+  2. Go to [Youtube Channel ID Finder](https://www.streamweasels.com/tools/youtube-channel-id-and-user-id-convertor/) and paste the channel's username
+  3. Convert it
+  4. Copy the Youtube channel's ID
+  5. [Fork this repository 🍴](https://github.com/peme969/youtube-release-notifier/fork)
   6. Go to your forked repository 🍴
   7. Go to `Settings > Secrets and Variables > Actions`, and click `New Repository secret`
-  8. Use `JWT_TOKEN` and paste your JWT Token from Steps 3
-  9. Go to your forked repository 🍴 and go to the Actions tab and press `I understand my workflows, go ahead and enable them`
+  8. Use `channel_id` as the name and paste the channel id from Steps 4
+  9. Add the email (name: email), email app password (name: email_password), youtube data v3 api key (name: api_key)
+  10. Go to your forked repository 🍴 and go to the Actions tab and press `I understand my workflows, go ahead and enable them`
 
 > [!IMPORTANT]
-> If you want to farm XP, go to the [`Manual lessons trigger`](https://github.com/gorouflex/DuoXPy/actions/workflows/manual.yml) workflows ( located in the Actions tab of the repo ). Then, enter the lesson you need to farm ( 1 lesson = 20xp ). Usually, if you enter a lot of lessons ( like >1000 ) or if Duolingo cannot handle the request, you will receive an error code or log, and the lesson will be skipped. So, think wisely before entering the lesson!
-> 
-> If you got `No skillId found in xpGains` log then try to do least 1 lesson so it can run back to normal!
+> If you want to check manually, go to the [`Manual Release Checker`](https://github.com/peme969/youtube-release-notifier/blob/main/.github/workflows/manual.yml) workflows ( located in the Actions tab of the repo ). Then,enter the date you want to check (eg. 1).
+> If you want to check another channel, enter the channel's id ([use this to convert from username to channel id](https://www.streamweasels.com/tools/youtube-channel-id-and-user-id-convertor/)). (this is optional)
+> If you got `Oh no! the api encountered an error!` then create a bug in the issues tab (create it here not in your forked repo)!
 
 <p align="center">
   <img src="https://github.com/gorouflex/Sandy/blob/main/Img/DuoXPy/get_token.png">
