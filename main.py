@@ -45,9 +45,9 @@ with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={chan
         except Exception as e:
             print(f"Error! an error occured sending the email...\n{e}")
             exit(-1)
-      elif app.status_code == 400:
-          print("Please provide a channel id and api key or valid channel ids and api keys :D")
-          exit(-1)
-      else:
-          print(f"Oh no! the api has encountered an error! Please create an issue in the issue tab. Status code: \n{app.status_code} Error: \n{app.text}")
-          exit(-1)
+    elif app.status_code == 400:
+        print("Please provide a channel id and api key or valid channel ids and api keys :D")
+        exit(-1)
+    else:
+        print(f"Oh no! the api has encountered an error! Please create an issue in the issue tab. Status code: \n{app.status_code} Error: \n{app.text}")
+        exit(-1)
