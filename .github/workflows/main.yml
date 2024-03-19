@@ -21,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: execute py script 
+      - name: running daily release detector...
         run: python main.py
         env:
             email: ${{ secrets.email }}
