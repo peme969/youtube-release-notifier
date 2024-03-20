@@ -1,5 +1,6 @@
 import requests
 import smtplib
+import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 def send_email(sender_email, sender_password, recipient_email, subject, message):
