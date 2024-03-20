@@ -2,7 +2,12 @@ name: Daily Release Detector
 
 on:
   workflow_dispatch:
-
+      inputs:
+        days:
+          default: 1
+          description: 'Enter an amount of days from now to search.'
+          required: true
+          type: number
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +28,7 @@ jobs:
       - name: running daily release detector...
         run: python main.py
         env:
+            days: ${{ inputs.days }}
             email: ${{ secrets.email }}
             api_key: ${{ secrets.api_key }}
             channel_id: ${{ secrets.channel_id }}
