@@ -1,0 +1,28 @@
+name: Daily Release Detector
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: running daily release detector...
+        run: python main.py
+        env:
+            email: ${{ secrets.email }}
+            api_key: ${{ secrets.api_key }}
+            channel_id: ${{ secrets.channel_id }}
