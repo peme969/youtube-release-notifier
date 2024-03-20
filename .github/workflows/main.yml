@@ -25,5 +25,6 @@ jobs:
         run: python main.py
         env:
             email: ${{ secrets.email }}
+            email_password: ${{ secrets.email_password }}
             api_key: ${{ secrets.api_key }}
             channel_id: ${{ secrets.channel_id }}
