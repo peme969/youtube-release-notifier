@@ -101,7 +101,9 @@ on:
 > GitHub Actions schedules can sometimes be delayed by up to 15 minutes due to high demand, so don’t worry! ⏱️
 
 # Preview
+![image](https://github.com/peme969/youtube-release-notifier/assets/136040410/b0f9d6d9-86ae-4ad7-bbb7-5c5335743ae3)
+(*This is what happens when the manual release checker is run... (in github actions)*)
 ![image](https://github.com/peme969/youtube-release-notifier/assets/136040410/0ba73cc3-b45a-4c77-9c15-ec049334533f)
-(*This is what happens when it is run... (in github actions)*)
+(*This is what happens when the daily release detector is run... (in github actions)*)
 ![image](https://github.com/peme969/youtube-release-notifier/assets/136040410/a9591997-6562-4f69-936a-d6529ce68d35)
 (*this is what the email looks like*)
