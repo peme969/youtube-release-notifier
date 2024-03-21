@@ -19,12 +19,13 @@ def send_email(sender_email, sender_password, recipient_email, subject, message)
 def capitalizy(input_string):
     return input_string.title()    
 def convert(time):
-      from datetime import datetime, timezone, timedelta
-      input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
-      ## this is in cst timezone so change the hours to the timezone difference you have from the UTC timezone (search it up)
-      cst_offset = timedelta(hours=-6)
-      cst_datetime = input_datetime.replace(tzinfo=timezone.utc) + cst_offset
-      return cst_datetime.strftime("%Y-%m-%d %H:%M:%S")
+    input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
+    source_timezone = pytz.utc
+    timesf = os.environ['timezone'] # your timezone from the github secrets (make sure to add it)
+    target_timezone = pytz.timezone(timesf)
+    localized_datetime = source_timezone.localize(input_datetime)
+    cdt_datetime = localized_datetime.astimezone(target_timezone)
+    return cdt_datetime.strftime("%Y-%m-%d %H:%M:%S")
 days = os.environ['days']
 channel_id = os.environ['channel_id']
 api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service
