@@ -31,6 +31,8 @@ if response.status_code == 200:
     except ValueError:
         print("Error: Invalid JSON response.")
         print(response.text)
+        exit(-1)
 else:
     print(response.text, f"Status code: {response.status_code}")
+    exit(-1)
 
