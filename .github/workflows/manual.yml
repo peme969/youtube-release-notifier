@@ -28,7 +28,7 @@ jobs:
         run: |
           CHANNEL_ID=${{ inputs.channel_id }}
           if [ -z "$CHANNEL_ID" ]; then
-            CHANNEL_ID=${{ secrets.channel_id }}
+            CHANNEL_ID=${{ inputs.channel_id }}
           fi
           python manual.py
         env:
@@ -36,7 +36,7 @@ jobs:
           email_password: ${{ secrets.email_password }}
           email: ${{ secrets.email }}
           api_key: ${{ secrets.api_key }}
-          channel_id: ${{ secrets.channel_id }}
+          channel_id: ${{ inputs.channel_id }}
 
 
 
