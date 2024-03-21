@@ -101,7 +101,7 @@ on:
 > GitHub Actions schedules can sometimes be delayed by up to 15 minutes due to high demand, so don’t worry! ⏱️
 
 # Preview
-
-<p align="left">
-  <img src="https://github.com/gorouflex/Sandy/blob/main/Img/DuoXPy/preview.png">
-</p>
+![image](https://github.com/peme969/youtube-release-notifier/assets/136040410/0ba73cc3-b45a-4c77-9c15-ec049334533f)
+(*This is what happens when it is run... (in github actions)*)
+![image](https://github.com/peme969/youtube-release-notifier/assets/136040410/a9591997-6562-4f69-936a-d6529ce68d35)
+(*this is what the email looks like*)
