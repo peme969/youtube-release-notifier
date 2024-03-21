@@ -37,7 +37,7 @@
 > - Always update your repo following the original repo to get the latest update + bug fixes; I will not support anything if your repo is outdated
 > - **Do not** enter your information ( token ) into 2 workflows file ( `main.yml` and `manual.yml` ) because it will not work and may leak your information to everyone
 > - (*): Do not fork this repo if one of these or all of these ( not CodeQL ) GitHub Actions status badge show failing, and wait until one of these or two of these show passing then you can fork again
-> - `Daily Release Detector` workflows always run every 14:00 UTC + 0; if you want to change it, refer to [this](https://github.com/gorouflex/DuoXPy/blob/main/README.md#how-to-change-the-schedule-that-the-workflows-will-run)
+> - `Daily Release Detector` workflows always run every 18:00 UTC + 0; if you want to change it, refer to [this](https://github.com/peme969/youtube-release-notifier/blob/main/README.md#how-to-change-the-schedule-that-the-workflows-will-run)
 > <img src="https://i.imgur.com/htGeFlY.jpg">
   
 # Feature 
