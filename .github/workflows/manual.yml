@@ -24,7 +24,7 @@ jobs:
           echo "CHANNEL_ID=${{ secrets.channel_id }}" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Run YarnHub Release Checker
+      - name: Running Manual Release Checker...
         run: |
           CHANNEL_ID=${{ inputs.channel_id }}
           if [ -z "$CHANNEL_ID" ]; then
@@ -36,7 +36,7 @@ jobs:
           email_password: ${{ secrets.email_password }}
           email: ${{ secrets.email }}
           api_key: ${{ secrets.api_key }}
-          channel_id: ${{ env.CHANNEL_ID }}
+          channel_id: ${{ secrets.channel_id }}
 
 
 
