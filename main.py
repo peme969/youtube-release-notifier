@@ -28,7 +28,7 @@ def convert(time):
     return cdt_datetime.strftime("%Y-%m-%d %H:%M:%S")
 channel_id = os.environ['channel_id']
 api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service
-with requests.get(f'https://channel-update-api.vercel.app/check?days={days}&channel_id={channel_id}&api_key={api_key}') as app:
+with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={channel_id}&api_key={api_key}') as app:
     aps = app.json()
     if aps['text'] == "No video uploaded":
         print("No video uploaded D:")
