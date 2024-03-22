@@ -26,7 +26,6 @@ def convert(time):
     localized_datetime = source_timezone.localize(input_datetime)
     cdt_datetime = localized_datetime.astimezone(target_timezone)
     return cdt_datetime.strftime("%Y-%m-%d %H:%M:%S")
-days = os.environ['days']
 channel_id = os.environ['channel_id']
 api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service
 with requests.get(f'https://channel-update-api.vercel.app/check?days={days}&channel_id={channel_id}&api_key={api_key}') as app:
