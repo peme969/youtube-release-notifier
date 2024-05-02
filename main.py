@@ -22,15 +22,15 @@ def send_email(sender_email, sender_password, recipient_email, subject, message)
 def capitalizy(input_string):
     return input_string.title()    
 def convert(time):
-    input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
+    input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S")
     source_timezone = pytz.utc
-    timesf = os.environ['timezone'] # your timezone from the github secrets (make sure to add it)
+    timesf = os.environ['timezone']  # your timezone from the github secrets (make sure to add it); it should look like this: US/Central or Europe/Amsterdam
     target_timezone = pytz.timezone(timesf)
     localized_datetime = source_timezone.localize(input_datetime)
-    cdt_datetime = localized_datetime.astimezone(target_timezone)
-    return cdt_datetime.strftime("%Y-%m-%d %H:%M:%S")
+    converted_datetime = localized_datetime.astimezone(target_timezone)
+    return converted_datetime.strftime("%Y-%m-%d %H:%M:%S")
 channel_id = os.environ['channel_id']
-api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service
+api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service; THIS IS A MUST!!
 with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={channel_id}&api_key={api_key}') as app:
     aps = app.json()
     if aps['text'] == "No video uploaded":
@@ -40,9 +40,9 @@ with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={chan
         cst_time = convert(aps['published'])
         print(f"\033[92mYay! {title} released {aps['title']} on {cst_time}\nWatch it here: {aps['url']}\033[0m")
         try:
-            sender_email = os.environ['email']
-            sender_password = os.environ['email_password']
-            recipient_email = os.environ['email'] # sends to your email
+            sender_email = os.environ['email'] # this is your email. the one you used for your app password
+            sender_password = os.environ['email_password'] # get a gmail app password (search up "gmail app password" to learn more)
+            recipient_email = os.environ['email'] # sends to your email or the same email you used for your app password
             subject = f"{title} released a new video!"
             message = f"{title} released {aps['title']} on {cst_time}\nWatch it here: {aps['url']}"
             send_email(sender_email, sender_password, recipient_email, subject, message)
