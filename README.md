@@ -40,7 +40,7 @@
 > - `Daily Release Detector` workflows always run every 18:00 UTC + 0; if you want to change it, refer to [this](https://github.com/peme969/youtube-release-notifier/blob/main/README.md#how-to-change-the-schedule-that-the-workflows-will-run)
 > <img src="https://i.imgur.com/htGeFlY.jpg">
   
-# Feature 
+# Features
 
 - Sends to Mail with video url and publish date 🔥
 - Accurately detects the latest video released every day ⚡
