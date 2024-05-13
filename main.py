@@ -24,7 +24,7 @@ def capitalizy(input_string):
 def convert(time):
     input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S")
     source_timezone = pytz.utc
-    timesf = os.environ['timezone']  # your timezone from the github secrets (make sure to add it); it should look like this: US/Central or Europe/Amsterdam
+    timesf = "US/Central"  # your timezone (make sure to edit it); it should look like this: US/Central or Europe/Amsterdam
     target_timezone = pytz.timezone(timesf)
     localized_datetime = source_timezone.localize(input_datetime)
     converted_datetime = localized_datetime.astimezone(target_timezone)
