@@ -1,7 +1,7 @@
 import requests
 import pytz
 from datetime import datetime
-
+import os
 def capitalizy(input_string):
     return input_string.title()
 def convert_tz(time):
