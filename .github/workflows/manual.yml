@@ -7,7 +7,7 @@ on:
         default: 1
         description: 'Enter an amount of days from now to search.'
         required: true
-        type: number
+        type: string
       channel_id:
         description: 'Enter the channel ID you want to check for. (Optional)'
         required: false
@@ -19,27 +19,20 @@ jobs:
     steps:
       - name: Set channel ID
         id: set_channel_id
-        if: ${{ inputs.channel_id == null }}
         run: |
-          echo "CHANNEL_ID=${{ secrets.channel_id }}" >> $GITHUB_ENV
+          if [ -z "${{ inputs.channel_id }}" ]; then
+            echo "CHANNEL_ID=${{ secrets.Channel_Id }}" >> $GITHUB_ENV
+          else
+            echo "CHANNEL_ID=${{ inputs.channel_id }}" >> $GITHUB_ENV
+          fi
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Running Manual Release Checker...
         run: |
-          CHANNEL_ID=${{ inputs.channel_id }}
-          if [ -z "$CHANNEL_ID" ]; then
-            CHANNEL_ID=${{ inputs.channel_id }}
-          fi
           python manual.py
         env:
           days: ${{ inputs.days }}
           email_password: ${{ secrets.email_password }}
           email: ${{ secrets.email }}
           api_key: ${{ secrets.api_key }}
-          channel_id: ${{ inputs.channel_id }}
-
-
-
-
-          
-    
+          channel_id: ${{ env.CHANNEL_ID }}
