@@ -18,6 +18,7 @@ days = os.environ['days']
 channel_id = os.environ['channel_id']
 api_key = os.environ['api_key']
 with requests.get(f'https://channel-updateapi.vercel.app/check?channel_id={channel_id}&api_key={api_key}&days_ago={days}') as app:
+    print(app.text)
     aps = app.json()
     if aps['text'].startswith("No videos uploaded"):
         print("No video uploaded D:")
