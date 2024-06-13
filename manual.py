@@ -14,7 +14,7 @@ def convert_tz(time):
     converted_datetime = localized_datetime.astimezone(target_timezone)
     date = converted_datetime.strftime("%B %dth, %A %Y at %I:%M %p")
     return date
-
+days = os.environ['days']
 channel_id = os.environ['channel_id']
 api_key = os.environ['api_key']
 with requests.get(f'https://channel-updateapi.vercel.app/check?channel_id={channel_id}&api_key={api_key}&days_ago={days}') as app:
