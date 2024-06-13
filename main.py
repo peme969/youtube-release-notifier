@@ -33,6 +33,7 @@ def convert_tz(time):
 channel_id = os.environ['channel_id']
 api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service; THIS IS A MUST!!
 with requests.get(f'https://channel-updateapi.vercel.app/check?channel_id={channel_id}&api_key={api_key}') as app:
+    print(app.text)
     aps = app.json()
     if aps['text'].startswith("No videos uploaded"):
         print("No video uploaded D:")
