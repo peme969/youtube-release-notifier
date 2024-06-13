@@ -1,38 +1,34 @@
 import requests
-import os
-from datetime import datetime, timezone, timedelta
+import pytz
+from datetime import datetime
 
 def capitalizy(input_string):
     return input_string.title()
+def convert_tz(time):
+    time = time.replace("Z", '')
+    input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S")
+    source_timezone = pytz.utc
+    timezone = "US/Central"
+    target_timezone = pytz.timezone(timezone)
+    localized_datetime = source_timezone.localize(input_datetime)
+    converted_datetime = localized_datetime.astimezone(target_timezone)
+    date = converted_datetime.strftime("%B %dth, %A %Y at %I:%M %p")
+    return date
 
-def convert(time):
-    input_datetime = datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
-    cst_offset = timedelta(hours=-6)
-    cst_datetime = input_datetime.replace(tzinfo=timezone.utc) + cst_offset
-    return cst_datetime.strftime("%Y-%m-%d %H:%M:%S")
-
-days = os.environ['days']
 channel_id = os.environ['channel_id']
-api_key = os.environ['api_key'] 
-
-url = f'https://channel-update-api.vercel.app/check?days={days}&channel_id={channel_id}&api_key={api_key}'
-
-response = requests.get(url)
-
-if response.status_code == 200:
-    try:
-        data = response.json()
-        if data['text'] == "No video uploaded":
-            print("No video uploaded D:")
-        elif data['text'].startswith("New video"):
-            cst_time = convert(data['published'])
-            title = capitalizy(data['channel_title'])
-            print(f"\033[92mYay! {title} released {data['title']} on {cst_time}\nWatch it here: {data['url']}\033[0m")
-    except ValueError:
-        print("Error: Invalid JSON response.")
-        print(response.text)
+api_key = os.environ['api_key']
+with requests.get(f'https://channel-updateapi.vercel.app/check?channel_id={channel_id}&api_key={api_key}&days_ago={days}') as app:
+    aps = app.json()
+    if aps['text'].startswith("No videos uploaded"):
+        print("No video uploaded D:")
+    elif aps['text'].startswith("Videos"):
+        for video in aps['videos']:
+            title = capitalizy(video['channel_title'])
+            formatted_datetime = convert_tz(video['published'])
+            print(f"\033[92mYay! {title} released {video['title']} on {formatted_datetime}\nWatch it here: {video['url']}\033[0m")
+    elif app.status_code == 400:
+        print("Please provide a channel id and api key or valid channel ids and api keys :D")
         exit(-1)
-else:
-    print(response.text, f"Status code: {response.status_code}")
-    exit(-1)
-
+    else:
+        print(f"Oh no! the api has encountered an error! Please create an issue in the issue tab. Status code: \n{app.status_code}\nError text: \n{app.text}")
+        exit(-1)
