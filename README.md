@@ -29,7 +29,6 @@
 
 #
 
-### ⚠️ This repository is still in its early stages and may not work as expected... ⚠️
 > [!IMPORTANT]
 > **Read all** documents in this repo before doing anything!
 > 
