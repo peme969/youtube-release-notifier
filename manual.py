@@ -17,7 +17,7 @@ def convert_tz(time):
 days = os.environ['days']
 channel_id = os.environ['channel_id']
 api_key = os.environ['api_key']
-with requests.get(f'https://channel-updateapi.vercel.app/check?channel_id={channel_id}&api_key={api_key}&days_ago={days}') as app:
+with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={channel_id}&api_key={api_key}&days_ago={days}') as app:
     aps = app.json()
     if aps['text'].startswith("No videos uploaded"):
         print("No video uploaded D:")
