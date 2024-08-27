@@ -41,8 +41,8 @@ with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={chan
         for video in aps['videos']:
             num += 1
             title = capitalizy(video['channel_title'])
-            time = convert_tz(video['published'])
-            print(f"\033[92mYay! {title} released {video['title']} on {time}\nWatch it here: {video['url']}\033[0m")
+            #time = convert_tz(video['published'])
+            print(f"\033[92mYay! {title} released {capitalizy(video['title'])} on {video['published']}\nWatch it here: {video['url']}\033[0m")
             try:
                 sender_email = os.environ['email'] # this is your email. the one you used for your app password
                 sender_password = os.environ['email_password'] # get a gmail app password (search up "gmail app password" to learn more)
