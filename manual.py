@@ -31,8 +31,8 @@ with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={chan
     elif aps['text'].startswith("Videos"):
         for video in aps['videos']:
             title = capitalizy(video['channel_title'])
-            formatted_datetime = convert_tz(video['published'])
-            print(f"\033[92mYay! {title} released {video['title']} on {formatted_datetime}\nWatch it here: {video['url']}\033[0m")
+            #formatted_datetime = convert_tz(video['published'])
+            print(f"\033[92mYay! {title} released {capitalizy(video['title'])} on {video['published']}\nWatch it here: {video['url']}\033[0m")
     elif app.status_code == 400:
         print("Please provide a channel id and api key or valid channel ids and api keys :D")
         exit(-1)
