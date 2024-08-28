@@ -9,7 +9,7 @@ def send_email(sender_email, sender_password, recipient_email, subject, message)
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     msg = MIMEMultipart()
-    msg['From'] = sender_email
+    msg['From'] = 'YarnHub Latest Video Release Checker'
     msg['To'] = recipient_email
     msg['Subject'] = subject
     msg.attach(MIMEText(message, 'plain'))
@@ -48,7 +48,7 @@ with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={chan
                 sender_password = os.environ['email_password'] # get a gmail app password (search up "gmail app password" to learn more)
                 recipient_email = os.environ['email'] # sends to your email or the same email you used 
                 subject = f"{title} released a new video!"
-                message = f"{title} released {video['title']} on {time}\nWatch it here: {video['url']}"
+                message = f"{title} released {video['title']} on {video['published']}\nWatch it here: {video['url']}"
                 send_email(sender_email, sender_password, recipient_email, subject, message)
                 print(f"Email Sent! \nEmail number {num}/{len(aps['videos'])} {len(aps['videos'])-num} more video(s)")
             except Exception as e:
