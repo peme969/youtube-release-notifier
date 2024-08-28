@@ -50,7 +50,9 @@ with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={chan
                 subject = f"{title} released a new video!"
                 message = f"{title} released {video['title']} on {video['published']}\nWatch it here: {video['url']}"
                 send_email(sender_email, sender_password, recipient_email, subject, message)
-                print(f"Email Sent! \nEmail number {num}/{len(aps['videos'])} {len(aps['videos'])-num} more video(s)")
+                if len(aps['videos'])-num > 0:
+                    print(f"Email Sent! \nEmail number {num}/{len(aps['videos'])} {len(aps['videos'])-num} more video(s)")
+                print(f"Email Sent!")    
             except Exception as e:
                 print(f"Error! an error occured sending the email...\n{e}")
                 exit(-1)
