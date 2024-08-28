@@ -31,8 +31,9 @@ def convert_tz(time):
     date = converted_datetime.strftime("%B %dth, %A %Y at %I:%M %p")
     return date
 channel_id = os.environ['channel_id']
+days = int(os.environ['days']) or 1
 api_key = os.environ['api_key'] # get an api key on the google cloud youtube data v3 api service; THIS IS A MUST!!
-with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={channel_id}&api_key={api_key}') as app:
+with requests.get(f'https://channel-update-api.vercel.app/check?channel_id={channel_id}&api_key={api_key}&days_ago={days}') as app:
     aps = app.json()
     if aps['text'].startswith("No videos uploaded"):
         print("No video uploaded D:")
